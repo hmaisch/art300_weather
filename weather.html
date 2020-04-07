@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="masterhead">
+        <div class="website-name"></div>
+        <div class="zipcode">
+            <input placeholder="Enter Your ZIP Code" v-on:input="zip_trigger" name="name" id="zip" />
+        </div>
+    </div>
+
+    <div class="current">
+        <div class="location">
+            <p>Overland Park</p>
+        </div>
+        <div class="day">
+            <p>today</p>
+        </div>
+        <div class="icon">
+            <p>
+                <img src="03d@2x.png">
+            </p>
+        </div>
+        <div class="current-temp">
+            <p>61</p>
+        </div>
+        <div class="high-and-low-temp">
+            <div class="high-temp">
+                <p>69</p>
+            </div>
+            <div class="low-temp">
+                <p>42</p>
+            </div>
+        </div>
+        <div class="extra">
+            <p>
+                Precipitation: 30%
+                UV index: 2
+                Wind speed: SE 11mph
+                Humidity: 57%
+                Pressure: 29.89 inHg
+            </p>
+        </div>
+    </div>
+
+    <div class="hourly-forecast">
+        <div class="time">
+            <ol>
+                <li>12pm</li>
+                <li>1pm</li>
+                <li>2pm</li>
+                <li>3pm</li>
+                <li>4pm</li>
+                <li>5pm</li>
+                <li>6pm</li>
+                <li>7pm</li>
+                <li>8pm</li>
+                <li>9pm</li>
+                <li>10pm</li>
+                <li>11pm</li>
+            </ol>
+        </div>
+        <div class="temp">
+            <ol>
+                <li>64</li>
+                <li>66</li>
+                <li>66</li>
+                <li>68</li>
+                <li>68</li>
+                <li>66</li>
+                <li>66</li>
+                <li>64</li>
+                <li>64</li>
+                <li>63</li>
+                <li>63</li>
+                <li>61</li> 
+            </ol>
+        </div>
+    </div>
+
+    <div class="extra-info">
+        <ol>
+            <li>Sunrise: 6:59am</li>
+            <li>Surise: 7:44pm</li>
+            <li>Timezone: central</li>
+            <li>Date: April 2, 2020</li>
+            <li>Time: 10:51am</li>
+        </ol>
+    </div>
+    
+    <div class="alerts">
+        <ol>
+            <li>rain: 30%</li>
+            <li>thunderstorm: 0</li>
+            <li>tornado: 0</li>
+            <li>winter: 0</li>
+        </ol>
+    </div>
+
+    <div class="weekly-forecast">
+        <div class="day1">
+            <div class="day">
+                <p>friday</p>
+            </div>
+            <div class="icon">
+                <p>
+                    <img src="11d@2x.png">
+                </p>
+            </div>
+            <div class="high-low-temps">
+                <p>
+                    48  32
+                </p>
+            <div class="description">
+                <p>Cloudy with a chance of thunderstorms.</p>
+        </div>
+
+        <div class="day2">
+            <div class="day">
+                <p>saturday</p>
+            </div>
+            <div class="icon">
+                <p>
+                    <img src="02d@2x.png">
+                </p>
+            </div>
+            <div class="high-low-temps">
+                <p>
+                    53  37
+                </p>
+            <div class="description">
+                <p>Partly cloudy.</p>
+        </div>
+
+        <div class="day3">
+            <div class="day">
+                <p>sunday</p>
+            </div>
+            <div class="icon">
+                <p>
+                    <img src="02d@2x.png">
+                </p>
+            </div>
+            <div class="high-low-temps">
+                <p>
+                    64  55
+                </p>
+            <div class="description">
+                <p>Partly cloudy.</p>
+        </div>
+
+        <div class="day4">
+            <div class="day">
+                <p>monday</p>
+            </div>
+            <div class="icon">
+                <p>
+                    <img src="11d@2x.png">
+                </p>
+            </div>
+            <div class="high-low-temps">
+                <p>
+                    75  62
+                </p>
+            <div class="description">
+                <p>Cloudy with a chance of thunderstorms.</p>
+        </div>
+
+        <div class="day5">
+            <div class="day">
+                <p>tuesday</p>
+            </div>
+            <div class="icon">
+                <p>
+                    <img src="02d@2x.png">
+                </p>
+            </div>
+            <div class="high-low-temps">
+                <p>
+                    84  57
+                </p>
+            <div class="description">
+                <p>Partly cloudy.</p>
+        </div>
+
+        <div class="day6">
+            <div class="day">
+                <p>wednesday</p>
+            </div>
+            <div class="icon">
+                <p>
+                    <img src="01d@2x.png">
+                </p>
+            </div>
+            <div class="high-low-temps">
+                <p>
+                    78  51
+                </p>
+            <div class="description">
+                <p>Clear skies.</p>
+        </div>
+        
+    </div>
+
+</body>
+</html>
