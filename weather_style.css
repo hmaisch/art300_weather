@@ -12,7 +12,6 @@ body{
 }
 
 .website-name{
-    width: 50px;
     padding-left: 40px;
     top: 50px;
     left: 50px;
@@ -55,7 +54,7 @@ body{
 }
 
 .high-and-low-temp{
-    font-size: xx-large;
+    font-size: 2em;
     position: absolute;
     left: 42vw;
     line-height: 35px;
@@ -129,6 +128,7 @@ body{
 }
 
 .weekly-forecast{
+    width: 20vw;
     position: absolute;
     right: 1vw;
     top: 65px;
@@ -183,4 +183,19 @@ ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1280px) {
+    .weekly-forecast{
+        width: 30vw;
+        right: .75vw;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .weekly-forecast{
+        width: 10vw;
+        margin-right: 50px;
+        right: 50px;
+    }
 }
