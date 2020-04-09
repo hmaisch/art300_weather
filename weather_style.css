@@ -1,3 +1,186 @@
 body{
-    
+    background-color: white;
+    margin: 0;
+    margin-bottom: 40px;
+    padding: 0;
+    font-family: futura-pt, sans-serif;
+}
+
+.masterhead{
+    width: 100vw;
+    background-color: #1ECBE1;
+}
+
+.website-name{
+    width: 50px;
+    padding-left: 40px;
+    top: 50px;
+    left: 50px;
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 55px;
+}
+
+.zipcode{
+    position: absolute;
+    top: 10px;
+    right: 50px;
+}
+
+.current{
+    background-color: #1EE196;
+    width: 50vw;
+    height: 60vh;
+    margin-top: 40px;
+    margin-left: 50px;
+    padding-left: 20px;
+}
+
+.location{
+    font-size: 3em;
+    font-weight: 700;
+    padding-top: 10px;
+}
+
+.day-of-the-week{
+    font-size: 2em;
+    line-height: 25px;
+}
+
+.current-temp{
+    font-size: 5.5em;
+    position: absolute;
+    left: 35vw;
+    line-height: 60px;
+}
+
+.high-and-low-temp{
+    font-size: xx-large;
+    position: absolute;
+    left: 42vw;
+    line-height: 35px;
+}
+
+.extra{
+    position: absolute;
+    padding-top: 100px;
+    font-size: medium;
+}
+
+.hourly-forecast{
+    width: 50vw;
+    height: 90vh;
+    margin-top: 30px;
+    margin-left: 50px;
+    padding-left: 20px;
+    background-color: #3CD0E3;
+}
+
+.title{
+    font-size: xxx-large;
+    font-weight: 700;
+    line-height: 50px;
+    padding-top: 10px;
+}
+
+.time{
+    position: absolute;
+    left: 20vw;
+    line-height: 3em;
+}
+
+.temp{
+    position: absolute;
+    left: 30vw;
+    line-height: 3em;
+}
+
+.extra-info{
+    background-color: #13616B;
+    width: 50vw;
+    height: 40vh;
+    margin-top: 30px;
+    margin-left: 50px;
+    padding-left: 20px;
+    font-size: x-large;
+    color: white;
+    line-height: 50px;
+    padding-top: 2px;
+}
+
+.alerts{
+    background-color: #13616B;
+    width: 50vw;
+    height: 35vh;
+    margin-top: 30px;
+    margin-left: 50px;
+    padding-left: 20px;
+    font-size: x-large;
+    color: white;
+    line-height: 50px;
+    padding-bottom: 40px;
+}
+
+.alerts-head{
+    font-size: xx-large;
+    font-weight: 700;
+    padding: 10px;
+    padding-bottom: 2px;
+}
+
+.weekly-forecast{
+    position: absolute;
+    right: 1vw;
+    top: 65px;
+    margin-top: 30px;
+    margin-right: 50px;
+
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 20vh 20vh 20vh 20vh 20vh 20vh;
+    grid-gap: 150px;
+}
+
+.day{
+    background-color: #13616B;
+    font-size: xx-large;
+    font-weight: 600;
+    color: white;
+    padding: 10px;
+}
+
+.high-low-temps{
+    word-spacing: 15px;
+    font-size: larger;
+    color: white;
+    background-color: #13616B;
+    padding: 10px;
+    text-align: center;
+}
+
+.description{
+    color: white;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #13616B;
+}
+
+p{
+    margin: 0;
+}
+
+.current-icon{
+    padding: 40px;
+}
+
+.icon{
+    padding: 40px;
+    background-color: #13616B;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }

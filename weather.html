@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://use.typekit.net/tnx5jpe.css">
+    <link rel="stylesheet" href="/weather_style.css">
 </head>
 <body>
     <div class="masterhead">
-        <div class="website-name"></div>
+        <div class="website-name">
+            <p>weather</p>
+        </div>
         <div class="zipcode">
             <input placeholder="Enter Your ZIP Code" v-on:input="zip_trigger" name="name" id="zip" />
         </div>
@@ -17,10 +21,10 @@
         <div class="location">
             <p>Overland Park</p>
         </div>
-        <div class="day">
-            <p>today</p>
+        <div class="day-of-the-week">
+            <p>Today</p>
         </div>
-        <div class="icon">
+        <div class="current-icon">
             <p>
                 <img src="03d@2x.png">
             </p>
@@ -37,19 +41,22 @@
             </div>
         </div>
         <div class="extra">
-            <p>
-                Precipitation: 30%
-                UV index: 2
-                Wind speed: SE 11mph
-                Humidity: 57%
-                Pressure: 29.89 inHg
-            </p>
+            <ul>
+                <li>Precipitation: 30%</li>
+                <li>UV index: 2</li>
+                <li>Wind speed: SE 11mph</li>
+                <li>Humidity: 57%</li>
+                <li>Pressure: 29.89 inHg</li>
+            </ul>
         </div>
     </div>
 
     <div class="hourly-forecast">
+        <div class="title">
+            <p>Hourly Forecast</p>
+        </div>
         <div class="time">
-            <ol>
+            <ul>
                 <li>12pm</li>
                 <li>1pm</li>
                 <li>2pm</li>
@@ -62,10 +69,10 @@
                 <li>9pm</li>
                 <li>10pm</li>
                 <li>11pm</li>
-            </ol>
+            </ul>
         </div>
         <div class="temp">
-            <ol>
+            <ul>
                 <li>64</li>
                 <li>66</li>
                 <li>66</li>
@@ -78,7 +85,7 @@
                 <li>63</li>
                 <li>63</li>
                 <li>61</li> 
-            </ol>
+            </ul>
         </div>
     </div>
 
@@ -93,6 +100,9 @@
     </div>
     
     <div class="alerts">
+        <div class="alerts-head">
+            <p>Alerts</p>
+        </div>
         <ol>
             <li>rain: 30%</li>
             <li>thunderstorm: 0</li>
