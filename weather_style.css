@@ -48,9 +48,9 @@ body{
 }
 
 .current-temp{
-    font-size: 5.5em;
+    font-size: 2em;
     position: absolute;
-    left: 35vw;
+    left: 19vw;
     line-height: 60px;
 }
 
@@ -93,7 +93,7 @@ body{
 
 .temp{
     position: absolute;
-    left: 30vw;
+    left: 40vw;
     line-height: 3em;
 }
 
@@ -140,7 +140,7 @@ body{
 
     display: grid;
     grid-template-columns: 300px;
-    grid-template-rows: 20vh 20vh 20vh 20vh 20vh 20vh;
+    grid-template-rows: 30vh 30vh 30vh 30vh 30vh 30vh;
     grid-gap: 150px;
 }
 
@@ -157,15 +157,15 @@ body{
     font-size: larger;
     color: white;
     background-color: #13616B;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
 }
 
 .description{
     color: white;
     padding-left: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color: #13616B;
 }
 

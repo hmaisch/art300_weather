@@ -1,231 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script src="keys.js"></script>
+
+    <script src="https://unpkg.com/@warnick/forecast-js/js/forecast.min.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/@warnick/forecast-js/css/forecast.css">
+
     <link rel="stylesheet" href="https://use.typekit.net/tnx5jpe.css">
     <link rel="stylesheet" href="/weather_style.css">
 </head>
+
 <body>
-    <div class="masterhead">
-        <div class="website-name">
-            <p>weather</p>
-        </div>
-        <div class="zipcode">
-            <input placeholder="Enter Your ZIP Code" v-on:input="zip_trigger" name="name" id="zip" />
-        </div>
-    </div>
 
-    <div class="current">
-        <div class="location">
-            <p>Overland Park</p>
-        </div>
-        <div class="day-of-the-week">
-            <p>Today</p>
-        </div>
-        <div class="current-icon">
-            <p>
-                <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="03d@2x.png">
-            </p>
-        </div>
-        <div class="current-temp">
-            <p>61</p>
-        </div>
-        <div class="high-and-low-temp">
-            <div class="high-temp">
-                <p>69</p>
+    <div class="results" id="app">
+        <div class="masterhead">
+            <div class="website-name">
+                <p>weather</p>
             </div>
-            <div class="low-temp">
-                <p>42</p>
+            <div class="zipcode">
+                <input placeholder="Enter Your ZIP Code" v-on:input="zip_trigger" name="name" id="zip" />
             </div>
         </div>
-        <div class="extra">
-            <ul>
-                <li>Precipitation: 30%</li>
-                <li>UV index: 2</li>
-                <li>Wind speed: SE 11mph</li>
-                <li>Humidity: 57%</li>
-                <li>Pressure: 29.89 inHg</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="hourly-forecast">
-        <div class="title">
-            <p>Hourly Forecast</p>
-        </div>
-        <div class="time">
-            <ul>
-                <li>12pm</li>
-                <li>1pm</li>
-                <li>2pm</li>
-                <li>3pm</li>
-                <li>4pm</li>
-                <li>5pm</li>
-                <li>6pm</li>
-                <li>7pm</li>
-                <li>8pm</li>
-                <li>9pm</li>
-                <li>10pm</li>
-                <li>11pm</li>
-            </ul>
-        </div>
-        <div class="temp">
-            <ul>
-                <li>64</li>
-                <li>66</li>
-                <li>66</li>
-                <li>68</li>
-                <li>68</li>
-                <li>66</li>
-                <li>66</li>
-                <li>64</li>
-                <li>64</li>
-                <li>63</li>
-                <li>63</li>
-                <li>61</li> 
-            </ul>
-        </div>
-    </div>
-
-    <div class="extra-info">
-        <ol>
-            <li>Sunrise: 6:59am</li>
-            <li>Surise: 7:44pm</li>
-            <li>Timezone: central</li>
-            <li>Date: April 2, 2020</li>
-            <li>Time: 10:51am</li>
-        </ol>
-    </div>
     
-    <div class="alerts">
-        <div class="alerts-head">
-            <p>Alerts</p>
-        </div>
-        <ol>
-            <li>rain: 30%</li>
-            <li>thunderstorm: 0</li>
-            <li>tornado: 0</li>
-            <li>winter: 0</li>
-        </ol>
-    </div>
-
-    <div class="weekly-forecast">
-        <div class="day1">
-            <div class="day">
-                <p>friday</p>
+        <div class="current">
+            <div class="location">
+                <p class="city">{{city}}, {{location.state}}</p>
             </div>
-            <div class="icon">
+            <div class="day-of-the-week">
+                <p class="date">{{time.date}}</p>
+            </div>
+            <div class="current-icon">
                 <p>
-                    <img src="http://openweathermap.org/img/wn/11d@2x.png" alt="11d@2x.png">
+                    <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="03d@2x.png">
                 </p>
             </div>
-            <div class="high-low-temps">
-                <p>
-                    48  32
-                </p>
+            <div class="current-temp">
+                <p class="current-temp">{{current.temp.current}}</p>
             </div>
-            <div class="description">
-                <p>Cloudy with a chance of thunderstorms.</p>
+            <div class="high-and-low-temp">
+                <div class="high-temp">
+                    <p class="high">{{forecast[0].max_temp}}</p>
+                </div>
+                <div class="low-temp">
+                    <p class="low">{{forecast[0].min_temp}}</p>
+                </div>
             </div>
-        </div>
-
-        <div class="day2">
-            <div class="day">
-                <p>saturday</p>
-            </div>
-            <div class="icon">
-                <p>
-                    <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="02d@2x.png">
-                </p>
-            </div>
-            <div class="high-low-temps">
-                <p>
-                    53  37
-                </p>
-            </div>
-            <div class="description">
-                <p>Partly cloudy.</p>
+            <div class="extra">
+                <ul>
+                    <li class="precipitation">
+                        <span class="likelihood">Rain {{forecast[0].pop}}%</span>
+                    </li>
+                    <li class="uv_index">
+                        <span class="data">UV Index {{current.uv}}</span>
+                    </li>
+                    <li class="wind_speed">
+                        <span class="wind_speed">Wind {{current.wind.speed}}</span>
+                    </li>
+                    <li class="humidity">
+                        <span class="humidity">Humidity {{current.humidity}}%</span>
+                    </li>
+                    <li class="pressure">
+                        <span class="pressure">Pressure {{current.pressure}}</span>
+                    </li>
+                </ul>
             </div>
         </div>
-
-        <div class="day3">
-            <div class="day">
-                <p>sunday</p>
+    
+        <div class="hourly-forecast">
+            <div class="title">
+                <p>Hourly Forecast</p>
             </div>
-            <div class="icon">
-                <p>
-                    <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="02d@2x.png">
-                </p>
+            <div class="time">
+                <ul>
+                    <li class="hour1">{{hourly[1].time}}</li>
+                    <li class="hour2">{{hourly[2].time}}</li>
+                    <li class="hour3">{{hourly[3].time}}</li>
+                    <li class="hour4">{{hourly[4].time}}</li>
+                    <li class="hour5">{{hourly[5].time}}</li>
+                    <li class="hour6">{{hourly[6].time}}</li>
+                    <li class="hour7">{{hourly[7].time}}</li>
+                    <li class="hour8">{{hourly[8].time}}</li>
+                    <li class="hour9">{{hourly[9].time}}</li>
+                    <li class="hour10">{{hourly[10].time}}</li>
+                    <li class="hour11">{{hourly[11].time}}</li>
+                    <li class="hour12">{{hourly[12].time}}</li>
+                </ul>
             </div>
-            <div class="high-low-temps">
-                <p>
-                    64  55
-                </p>
-            </div>   
-            <div class="description">
-                <p>Partly cloudy.</p>
-            </div>
-        </div>
-
-        <div class="day4">
-            <div class="day">
-                <p>monday</p>
-            </div>
-            <div class="icon">
-                <p>
-                    <img src="http://openweathermap.org/img/wn/11d@2x.png" alt="11d@2x.png">
-                </p>
-            </div>
-            <div class="high-low-temps">
-                <p>
-                    75  62
-                </p>
-            </div>
-            <div class="description">
-                <p>Cloudy with a chance of thunderstorms.</p>
-            </div>
-        </div>
-
-        <div class="day5">
-            <div class="day">
-                <p>tuesday</p>
-            </div>
-            <div class="icon">
-                <p>
-                    <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="02d@2x.png">
-                </p>
-            </div>
-            <div class="high-low-temps">
-                <p>
-                    84  57
-                </p>
-            </div>
-            <div class="description">
-                <p>Partly cloudy.</p>
+            <div class="temp">
+                <ul>
+                    <li class="hour1">{{hourly[1].temperature}}</li>
+                    <li class="hour2">{{hourly[2].temperature}}</li>
+                    <li class="hour3">{{hourly[3].temperature}}</li>
+                    <li class="hour4">{{hourly[4].temperature}}</li>
+                    <li class="hour5">{{hourly[5].temperature}}</li>
+                    <li class="hour6">{{hourly[6].temperature}}</li>
+                    <li class="hour7">{{hourly[7].temperature}}</li>
+                    <li class="hour8">{{hourly[8].temperature}}</li>
+                    <li class="hour9">{{hourly[9].temperature}}</li>
+                    <li class="hour10">{{hourly[10].temperature}}</li>
+                    <li class="hour11">{{hourly[11].temperature}}</li>
+                    <li class="hour12">{{hourly[12].temperature}}</li>
+                </ul>
             </div>
         </div>
-
-        <div class="day6">
-            <div class="day">
-                <p>wednesday</p>
-            </div>
-            <div class="icon">
-                <p>
-                    <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="01d@2x.png">
-                </p>
-            </div>
-            <div class="high-low-temps">
-                <p>
-                    78  51
-                </p>
-            </div>
-            <div class="description">
-                <p>Clear skies.</p>
-            </div>
+    
+        <div class="extra-info">
+            <ol>
+                <li class="sunrise">Sunrise {{current.sunrise}}</li>
+                <li class="sunset">Sunset {{current.sunset}}</li>
+                <li class="date">{{time.date}}</li>
+                <li class="time">{{time.hour_12}}:{{time.minute}}:{{time.seconds}}</li>
+            </ol>
         </div>
         
+        <div class="alerts">
+            <div class="alerts-head">
+                <p>Alerts</p>
+            </div>
+            <ol>
+                <li class="precipitation">
+                    <span class="likelihood">Rain {{forecast[0].pop}}%</span>
+                </li>
+                <li class="thunderstorm">
+                    <span class="likelihood">Thunderstorm</span>
+                </li>
+                <li>tornado: 0</li>
+                <li>winter: 0</li>
+            </ol>
+        </div>
+    
+        <div class="weekly-forecast">
+            <div class="day1">
+                <div class="day">
+                    <p class="day1">{{forecast[1].weekday}}</p>
+                </div>
+                <div class="icon">
+                    <p>
+                        <img src="http://openweathermap.org/img/wn/11d@2x.png" alt="11d@2x.png">
+                    </p>
+                </div>
+                <div class="high-low-temps">
+                    <p class="high">{{forecast[1].max_temp}}</p>
+                    <p class="low">{{forecast[1].min_temp}}</p>
+                </div>
+                <div class="description">
+                    <p class="description">{{forecast[1].weather.description}}</p>
+                </div>
+            </div>
+    
+            <div class="day2">
+                <div class="day">
+                    <p class="day2">{{forecast[2].weekday}}</p>
+                </div>
+                <div class="icon">
+                    <p>
+                        <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="02d@2x.png">
+                    </p>
+                </div>
+                <div class="high-low-temps">
+                    <p class="high">{{forecast[2].max_temp}}</p>
+                    <p class="low">{{forecast[2].min_temp}}</p>
+                </div>
+                <div class="description">
+                    <p class="description">{{forecast[2].weather.description}}</p>
+                </div>
+            </div>
+    
+            <div class="day3">
+                <div class="day">
+                    <p class="day3">{{forecast[3].weekday}}</p>
+                </div>
+                <div class="icon">
+                    <p>
+                        <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="02d@2x.png">
+                    </p>
+                </div>
+                <div class="high-low-temps">
+                    <p class="high">{{forecast[3].max_temp}}</p>
+                    <p class="low">{{forecast[3].min_temp}}</p>
+                </div>   
+                <div class="description">
+                    <p class="description">{{forecast[3].weather.description}}</p>
+                </div>
+            </div>
+    
+            <div class="day4">
+                <div class="day">
+                    <p class="day4">{{forecast[4].weekday}}</p>
+                </div>
+                <div class="icon">
+                    <p>
+                        <img src="http://openweathermap.org/img/wn/11d@2x.png" alt="11d@2x.png">
+                    </p>
+                </div>
+                <div class="high-low-temps">
+                    <p class="high">{{forecast[4].max_temp}}</p>
+                    <p class="low">{{forecast[4].min_temp}}</p>
+                </div>
+                <div class="description">
+                    <p class="description">{{forecast[4].weather.description}}</p>
+                </div>
+            </div>
+    
+            <div class="day5">
+                <div class="day">
+                    <p class="day5">{{forecast[5].weekday}}</p>
+                </div>
+                <div class="icon">
+                    <p>
+                        <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="02d@2x.png">
+                    </p>
+                </div>
+                <div class="high-low-temps">
+                    <p class="high">{{forecast[5].max_temp}}</p>
+                    <p class="low">{{forecast[5].min_temp}}</p>
+                </div>
+                <div class="description">
+                    <p class="description">{{forecast[5].weather.description}}</p>
+                </div>
+            </div>
+    
+            <div class="day6">
+                <div class="day">
+                    <p class="day6">{{forecast[6].weekday}}</p>
+                </div>
+                <div class="icon">
+                    <p>
+                        <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="01d@2x.png">
+                    </p>
+                </div>
+                <div class="high-low-temps">
+                    <p class="high">{{forecast[6].max_temp}}</p>
+                    <p class="low">{{forecast[6].min_temp}}</p>
+                </div>
+                <div class="description">
+                    <p class="description">{{forecast[6].weather.description}}</p>
+                </div>
+            </div>
+            
+        </div>
     </div>
+
 </body>
 </html>
