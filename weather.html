@@ -33,10 +33,10 @@
             <div class="day-of-the-week">
                 <p class="date">{{time.date}}</p>
             </div>
-            <div class="current-icon">
-                <img v-bind:src="'/img/' + forecast[0].description_icon + '.png'" 
-                v-bind:alt="forecast[0].weather.description">
-            </div>
+            <div
+                    v-bind:class="'icon_'+forecast[0].description_icon"
+                    class="current-icon"
+                ></div>
             <div class="current-temp">
                 <p class="current-temp">{{current.temp.current}}</p>
             </div>
@@ -135,10 +135,10 @@
                 <div class="day">
                     <p class="day1">{{forecast[1].weekday}}</p>
                 </div>
-                <div class="icon">
-                    <img v-bind:src="'/img/' + forecast[1].description_icon + '.png'" 
-                    v-bind:alt="forecast[1].weather.description">
-                </div>
+                <div
+                    v-bind:class="'icon_'+forecast[1].description_icon"
+                    class="icon"
+                ></div>
                 <div class="high-low-temps">
                     <p class="high">{{forecast[1].max_temp}}</p>
                     <p class="low">{{forecast[1].min_temp}}</p>
@@ -152,10 +152,10 @@
                 <div class="day">
                     <p class="day2">{{forecast[2].weekday}}</p>
                 </div>
-                <div class="icon">
-                    <img v-bind:src="'/img/' + forecast[2].description_icon + '.png'" 
-                    v-bind:alt="forecast[2].weather.description">
-                </div>
+                <div
+                    v-bind:class="'icon_'+forecast[2].description_icon"
+                    class="icon"
+                ></div>
                 <div class="high-low-temps">
                     <p class="high">{{forecast[2].max_temp}}</p>
                     <p class="low">{{forecast[2].min_temp}}</p>
@@ -169,10 +169,10 @@
                 <div class="day">
                     <p class="day3">{{forecast[3].weekday}}</p>
                 </div>
-                <div class="icon">
-                    <img v-bind:src="'/img/' + forecast[3].description_icon + '.png'" 
-                    v-bind:alt="forecast[3].weather.description">
-                </div>
+                <div
+                    v-bind:class="'icon_'+forecast[3].description_icon"
+                    class="icon"
+                ></div>
                 <div class="high-low-temps">
                     <p class="high">{{forecast[3].max_temp}}</p>
                     <p class="low">{{forecast[3].min_temp}}</p>
@@ -186,10 +186,10 @@
                 <div class="day">
                     <p class="day4">{{forecast[4].weekday}}</p>
                 </div>
-                <div class="icon">
-                    <img v-bind:src="'/img/' + forecast[4].description_icon + '.png'" 
-                    v-bind:alt="forecast[4].weather.description">
-                </div>
+                <div
+                    v-bind:class="'icon_'+forecast[4].description_icon"
+                    class="icon"
+                ></div>
                 <div class="high-low-temps">
                     <p class="high">{{forecast[4].max_temp}}</p>
                     <p class="low">{{forecast[4].min_temp}}</p>
@@ -203,10 +203,10 @@
                 <div class="day">
                     <p class="day5">{{forecast[5].weekday}}</p>
                 </div>
-                <div class="icon">
-                    <img v-bind:src="'/img/' + forecast[5].description_icon + '.png'" 
-                    v-bind:alt="forecast[5].weather.description">
-                </div>
+                <div
+                    v-bind:class="'icon_'+forecast[5].description_icon"
+                    class="icon"
+                ></div>
                 <div class="high-low-temps">
                     <p class="high">{{forecast[5].max_temp}}</p>
                     <p class="low">{{forecast[5].min_temp}}</p>
@@ -220,10 +220,10 @@
                 <div class="day">
                     <p class="day6">{{forecast[6].weekday}}</p>
                 </div>
-                <div class="icon">
-                    <img v-bind:src="'/img/' + forecast[6].description_icon + '.png'" 
-                    v-bind:alt="forecast[6].weather.description">
-                </div>
+                <div
+                    v-bind:class="'icon_'+forecast[6].description_icon"
+                    class="icon"
+                ></div>
                 <div class="high-low-temps">
                     <p class="high">{{forecast[6].max_temp}}</p>
                     <p class="low">{{forecast[6].min_temp}}</p>
