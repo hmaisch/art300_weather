@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <script src="keys.js"></script>
-
-    <script src="https://unpkg.com/@warnick/forecast-js/js/forecast.min.js" defer></script>
-    <link rel="stylesheet" href="https://unpkg.com/@warnick/forecast-js/css/forecast.css">
-
     <link rel="stylesheet" href="https://use.typekit.net/tnx5jpe.css">
+
+    <script src="keys.js"></script>
+    <script src="forecast.js" defer></script>
+    <link rel="stylesheet" href="forecast.css">
     <link rel="stylesheet" href="/weather_style.css">
 </head>
 
@@ -35,9 +34,7 @@
                 <p class="date">{{time.date}}</p>
             </div>
             <div class="current-icon">
-                <p>
-                    <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="03d@2x.png">
-                </p>
+                <p class="icon">{{current.description_icon}}</p>
             </div>
             <div class="current-temp">
                 <p class="current-temp">{{current.temp.current}}</p>
@@ -246,4 +243,5 @@
         </div>
     </div>
 </body>
+
 </html>
