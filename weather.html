@@ -34,7 +34,8 @@
                 <p class="date">{{time.date}}</p>
             </div>
             <div class="current-icon">
-                <p class="icon">{{current.description_icon}}</p>
+                <img v-bind:src="'/img/' + forecast[0].description_icon + '.png'" 
+                v-bind:alt="forecast[0].weather.description">
             </div>
             <div class="current-temp">
                 <p class="current-temp">{{current.temp.current}}</p>
@@ -85,7 +86,6 @@
                     <li class="hour9">{{hourly[9].time}}</li>
                     <li class="hour10">{{hourly[10].time}}</li>
                     <li class="hour11">{{hourly[11].time}}</li>
-                    <li class="hour12">{{hourly[12].time}}</li>
                 </ul>
             </div>
             <div class="temp">
@@ -101,7 +101,6 @@
                     <li class="hour9">{{hourly[9].temperature}}</li>
                     <li class="hour10">{{hourly[10].temperature}}</li>
                     <li class="hour11">{{hourly[11].temperature}}</li>
-                    <li class="hour12">{{hourly[12].temperature}}</li>
                 </ul>
             </div>
         </div>
@@ -111,7 +110,7 @@
                 <li class="sunrise">Sunrise {{current.sunrise}}</li>
                 <li class="sunset">Sunset {{current.sunset}}</li>
                 <li class="date">{{time.date}}</li>
-                <li class="time">{{time.hour_12}}:{{time.minute}}:{{time.seconds}}</li>
+                <li class="current-time">{{time.hour_12}}:{{time.minute}}:{{time.seconds}}</li>
             </ol>
         </div>
         
@@ -137,9 +136,8 @@
                     <p class="day1">{{forecast[1].weekday}}</p>
                 </div>
                 <div class="icon">
-                    <p>
-                        <img src="http://openweathermap.org/img/wn/11d@2x.png" alt="11d@2x.png">
-                    </p>
+                    <img v-bind:src="'/img/' + forecast[1].description_icon + '.png'" 
+                    v-bind:alt="forecast[1].weather.description">
                 </div>
                 <div class="high-low-temps">
                     <p class="high">{{forecast[1].max_temp}}</p>
@@ -155,9 +153,8 @@
                     <p class="day2">{{forecast[2].weekday}}</p>
                 </div>
                 <div class="icon">
-                    <p>
-                        <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="02d@2x.png">
-                    </p>
+                    <img v-bind:src="'/img/' + forecast[2].description_icon + '.png'" 
+                    v-bind:alt="forecast[2].weather.description">
                 </div>
                 <div class="high-low-temps">
                     <p class="high">{{forecast[2].max_temp}}</p>
@@ -173,9 +170,8 @@
                     <p class="day3">{{forecast[3].weekday}}</p>
                 </div>
                 <div class="icon">
-                    <p>
-                        <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="02d@2x.png">
-                    </p>
+                    <img v-bind:src="'/img/' + forecast[3].description_icon + '.png'" 
+                    v-bind:alt="forecast[3].weather.description">
                 </div>
                 <div class="high-low-temps">
                     <p class="high">{{forecast[3].max_temp}}</p>
@@ -191,9 +187,8 @@
                     <p class="day4">{{forecast[4].weekday}}</p>
                 </div>
                 <div class="icon">
-                    <p>
-                        <img src="http://openweathermap.org/img/wn/11d@2x.png" alt="11d@2x.png">
-                    </p>
+                    <img v-bind:src="'/img/' + forecast[4].description_icon + '.png'" 
+                    v-bind:alt="forecast[4].weather.description">
                 </div>
                 <div class="high-low-temps">
                     <p class="high">{{forecast[4].max_temp}}</p>
@@ -209,9 +204,8 @@
                     <p class="day5">{{forecast[5].weekday}}</p>
                 </div>
                 <div class="icon">
-                    <p>
-                        <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="02d@2x.png">
-                    </p>
+                    <img v-bind:src="'/img/' + forecast[5].description_icon + '.png'" 
+                    v-bind:alt="forecast[5].weather.description">
                 </div>
                 <div class="high-low-temps">
                     <p class="high">{{forecast[5].max_temp}}</p>
@@ -227,9 +221,8 @@
                     <p class="day6">{{forecast[6].weekday}}</p>
                 </div>
                 <div class="icon">
-                    <p>
-                        <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="01d@2x.png">
-                    </p>
+                    <img v-bind:src="'/img/' + forecast[6].description_icon + '.png'" 
+                    v-bind:alt="forecast[6].weather.description">
                 </div>
                 <div class="high-low-temps">
                     <p class="high">{{forecast[6].max_temp}}</p>
@@ -239,8 +232,9 @@
                     <p class="description">{{forecast[6].weather.description}}</p>
                 </div>
             </div>
-            
+           
         </div>
+
     </div>
 </body>
 
